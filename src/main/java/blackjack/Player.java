@@ -25,4 +25,8 @@ public class Player {
     public Money minusBettingMoney() {
         return saveMoney.minus(bettingMoney);
     }
+
+    public Money plusBettingMoney() {
+        return saveMoney.plus(bettingMoney);
+    }
 }

@@ -3,7 +3,7 @@ package blackjack;
 import java.util.Objects;
 
 public class Money {
-    private int money;
+    private final int money;
 
     public Money(int money) {
         this.money = money;
@@ -11,6 +11,10 @@ public class Money {
 
     public Money minus(Money compareMoney) {
         return new Money(money - compareMoney.money);
+    }
+
+    public Money plus(Money compareMoney) {
+        return new Money(money + compareMoney.money);
     }
 
     @Override
