@@ -17,6 +17,10 @@ public class Money {
         return new Money(money + compareMoney.money);
     }
 
+    public Money multiple(double multiple) {
+        return new Money((int) (money * multiple));
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

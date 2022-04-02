@@ -34,4 +34,8 @@ public class Player {
     public Money plusBettingMoney() {
         return saveMoney.plus(bettingMoney);
     }
+
+    public Money plusBettingMoney(double multiple) {
+        return saveMoney.plus(bettingMoney.multiple(multiple));
+    }
 }

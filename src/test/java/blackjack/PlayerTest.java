@@ -35,4 +35,10 @@ public class PlayerTest {
         Player player = new Player(10000);
         Assertions.assertThat(player.plusBettingMoney()).isEqualTo(new Money(10000));
     }
+
+    @Test
+    void plus_betting_money_multiple() {
+        Player player = new Player(10000);
+        Assertions.assertThat(player.plusBettingMoney(1.5D)).isEqualTo(new Money(15000));
+    }
 }
