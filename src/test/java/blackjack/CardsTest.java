@@ -20,10 +20,13 @@ public class CardsTest {
 
     @Test
     void over_sum_of_cards() {
-        Player player = new Player();
-        player.receiveCard(new Card("Spade", 10));
-        player.receiveCard(new Card("Diamond", 10));
+        List<Card> cardList = Arrays.asList(
+                new Card("Spade", 5),
+                new Card("Heart", 4),
+                new Card("Diamond", 10));
+        Cards cards = new Cards(cardList);
 
-        Assertions.assertThat(player.isOverThaTNumber(19)).isEqualTo(true);
+        Assertions.assertThat(cards.isOverThaTNumber(19)).isEqualTo(false);
+        Assertions.assertThat(cards.isOverThaTNumber(18)).isEqualTo(true);
     }
 }

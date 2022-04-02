@@ -51,4 +51,13 @@ public class PlayerTest {
 
         Assertions.assertThat(player.isBlackJack()).isEqualTo(true);
     }
+
+    @Test
+    void over_sum_of_cards() {
+        Player player = new Player();
+        player.receiveCard(new Card("Spade", 10));
+        player.receiveCard(new Card("Diamond", 10));
+
+        Assertions.assertThat(player.isOverThaTNumber(19)).isEqualTo(true);
+    }
 }
