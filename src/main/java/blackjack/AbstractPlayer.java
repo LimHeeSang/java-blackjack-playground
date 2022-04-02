@@ -29,4 +29,8 @@ public abstract class AbstractPlayer {
     public boolean isOverThaTNumber(int number) {
         return cards.isOverThaTNumber(number);
     }
+
+    public int getCardsSum() {
+        return cards.getSum();
+    }
 }

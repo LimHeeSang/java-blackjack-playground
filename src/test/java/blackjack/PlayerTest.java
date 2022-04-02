@@ -3,6 +3,9 @@ package blackjack;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class PlayerTest {
     @Test
     void receive_card() {
@@ -50,6 +53,16 @@ public class PlayerTest {
         player.receiveTwoCards(card1, card2);
 
         Assertions.assertThat(player.isBlackJack()).isEqualTo(true);
+    }
+
+    @Test
+    void card_sum() {
+        Player player = new Player();
+        player.receiveCard(new Card("Spade", 5));
+        player.receiveCard(new Card("Diamond", 6));
+        player.receiveCard(new Card("Heart", 7));
+
+        Assertions.assertThat(player.getCardsSum()).isEqualTo(18);
     }
 
     @Test
