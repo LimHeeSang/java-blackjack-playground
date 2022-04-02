@@ -27,7 +27,7 @@ public enum CardNumber {
                 .orElseThrow(() -> new IllegalArgumentException(ERROR_OF_CARD_NUM_RANGE));
     }
 
-    private int getNumber() {
+    int getNumber() {
         return number;
     }
 }

@@ -16,6 +16,10 @@ public class Card {
         this.cardNumber = CardNumber.getNumberOfSpecial(special);
     }
 
+    public int getNumber() {
+        return cardNumber.getNumber();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
