@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cards {
+    public static final int BLACKJACK_GOAL_NUMBER = 21;
     private final List<Card> cards;
 
     public Cards(List<Card> cardList) {
@@ -30,5 +31,9 @@ public class Cards {
 
     public boolean isOverThaTNumber(int number) {
         return getSum() > number;
+    }
+
+    public boolean isBlackJack() {
+        return getSum() == BLACKJACK_GOAL_NUMBER;
     }
 }

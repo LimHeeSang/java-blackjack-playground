@@ -41,4 +41,14 @@ public class PlayerTest {
         Player player = new Player(10000);
         Assertions.assertThat(player.plusBettingMoney(1.5D)).isEqualTo(new Money(15000));
     }
+
+    @Test
+    void is_blackjack() {
+        Player player = new Player();
+        Card card1 = new Card("Spade", 10);
+        Card card2 = new Card("Heart", "ACE_11");
+        player.receiveTwoCards(card1, card2);
+
+        Assertions.assertThat(player.isBlackJack()).isEqualTo(true);
+    }
 }
