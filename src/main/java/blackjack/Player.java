@@ -18,6 +18,11 @@ public class Player {
         cards.add(card);
     }
 
+    public void receiveTwoCards(Card card1, Card card2) {
+        receiveCard(card1);
+        receiveCard(card2);
+    }
+
     public boolean hasThatCard(Card card) {
         return cards.existThatCard(card);
     }
