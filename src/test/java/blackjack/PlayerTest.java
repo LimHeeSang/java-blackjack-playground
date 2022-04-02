@@ -12,4 +12,10 @@ public class PlayerTest {
         player.receiveCard(card);
         Assertions.assertThat(player.hasThatCard(card)).isEqualTo(true);
     }
+
+    @Test
+    void minus_betting_money() {
+        Player player = new Player(10000);
+        Assertions.assertThat(player.minusBettingMoney()).isEqualTo(new Money(-10000));
+    }
 }

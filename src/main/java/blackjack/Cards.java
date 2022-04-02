@@ -27,4 +27,8 @@ public class Cards {
                 .map(Card::getNumber)
                 .reduce(0, Integer::sum);
     }
+
+    public boolean isOverThaTNumber(int number) {
+        return getSum() > number;
+    }
 }
