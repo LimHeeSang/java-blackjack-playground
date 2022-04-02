@@ -23,8 +23,4 @@ public class Player extends AbstractPlayer{
     public Money plusBettingMoney(double multiple) {
         return saveMoney.plus(bettingMoney.multiple(multiple));
     }
-
-    public boolean isBlackJack() {
-        return cards.isBlackJack();
-    }
 }
