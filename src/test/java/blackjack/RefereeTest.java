@@ -50,4 +50,11 @@ public class RefereeTest {
         Assertions.assertThat(player.getSaveMoney()).isEqualTo(new Money(-10000));
         Assertions.assertThat(dealer.getSaveMoney()).isEqualTo(new Money(10000));
     }
+
+    @Test
+    void give_bettingmoney_dealer_to_player() {
+        referee.giveMoneyDealerToPlayer(player, dealer);
+        Assertions.assertThat(dealer.getSaveMoney()).isEqualTo(new Money(-10000));
+        Assertions.assertThat(player.getSaveMoney()).isEqualTo(new Money(10000));
+    }
 }
