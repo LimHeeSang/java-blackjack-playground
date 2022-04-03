@@ -16,19 +16,19 @@ public class PlayerTest {
     @Test
     void minus_betting_money() {
         Player player = new Player(10000);
-        Assertions.assertThat(player.minusBettingMoney()).isEqualTo(new Money(-10000));
+        Assertions.assertThat(player.minusBettingMoney()).isEqualTo(player.getSaveMoney());
     }
 
     @Test
     void plus_betting_money() {
         Player player = new Player(10000);
-        Assertions.assertThat(player.plusBettingMoney()).isEqualTo(new Money(10000));
+        Assertions.assertThat(player.plusBettingMoney()).isEqualTo(player.getSaveMoney());
     }
 
     @Test
     void plus_betting_money_multiple() {
         Player player = new Player(10000);
-        Assertions.assertThat(player.plusBettingMoney(1.5D)).isEqualTo(new Money(15000));
+        Assertions.assertThat(player.plusBettingMoney(1.5D)).isEqualTo(player.getSaveMoney());
     }
 
     @Test

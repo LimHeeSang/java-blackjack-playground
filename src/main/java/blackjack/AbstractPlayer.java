@@ -2,7 +2,7 @@ package blackjack;
 
 public abstract class AbstractPlayer {
     protected final Cards cards;
-    protected final Money saveMoney;
+    protected Money saveMoney;
 
     public AbstractPlayer(Money saveMoney) {
         cards = new Cards();
@@ -33,5 +33,9 @@ public abstract class AbstractPlayer {
 
     public int getCardCount() {
         return cards.getCardCount();
+    }
+
+    public Money getSaveMoney() {
+        return saveMoney;
     }
 }

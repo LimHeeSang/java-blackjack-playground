@@ -7,10 +7,12 @@ public class Dealer extends AbstractPlayer {
     }
 
     public Money minusByBettingMoney(Money bettingMoney) {
-        return saveMoney.minus(bettingMoney);
+        saveMoney = saveMoney.minus(bettingMoney);
+        return getSaveMoney();
     }
 
     public Money plusByBettingMoney(Money bettingMoney) {
-        return saveMoney.plus(bettingMoney);
+        saveMoney = saveMoney.plus(bettingMoney);
+        return getSaveMoney();
     }
 }

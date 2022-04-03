@@ -13,14 +13,21 @@ public class Player extends AbstractPlayer{
     }
 
     public Money minusBettingMoney() {
-        return saveMoney.minus(bettingMoney);
+        saveMoney = saveMoney.minus(bettingMoney);
+        return getSaveMoney();
     }
 
     public Money plusBettingMoney() {
-        return saveMoney.plus(bettingMoney);
+        saveMoney = saveMoney.plus(bettingMoney);
+        return getSaveMoney();
     }
 
     public Money plusBettingMoney(double multiple) {
-        return saveMoney.plus(bettingMoney.multiple(multiple));
+        saveMoney = saveMoney.plus(bettingMoney.multiple(multiple));
+        return getSaveMoney();
+    }
+
+    public Money getBettingMoney() {
+        return bettingMoney;
     }
 }
