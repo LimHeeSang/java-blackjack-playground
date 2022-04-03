@@ -36,4 +36,12 @@ public class Cards {
     public boolean isBlackJack() {
         return getSum() == BLACKJACK_GOAL_NUMBER;
     }
+
+    public Card getCardOfIndex(int index) {
+        return cards.get(index);
+    }
+
+    public int getCardCount() {
+        return cards.size();
+    }
 }

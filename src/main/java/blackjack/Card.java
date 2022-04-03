@@ -16,6 +16,11 @@ public class Card {
         this.cardNumber = CardNumber.getNumberOfSpecial(special);
     }
 
+    public Card(CardShape shape, CardNumber number) {
+        this.cardShape = shape;
+        this.cardNumber = number;
+    }
+
     public int getNumber() {
         return cardNumber.getNumber();
     }
