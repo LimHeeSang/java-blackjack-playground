@@ -65,4 +65,9 @@ public class Referee {
             player.receiveCard(getRandomCard(), getRandomCard());
         }
     }
+
+    public void giveMoneyPlayerToDealer(Player player, Dealer dealer) {
+        player.minusBettingMoney();
+        dealer.plusByBettingMoney(player.getBettingMoney());
+    }
 }

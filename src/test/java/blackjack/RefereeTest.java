@@ -7,9 +7,12 @@ import java.util.Arrays;
 import java.util.List;
 
 public class RefereeTest {
+    private final Referee referee = new Referee();
+    private final Player player = new Player(10000);
+    private final Dealer dealer = new Dealer();
+
     @Test
     void get_random_card() {
-        Referee referee = new Referee();
         Assertions.assertThat(referee.getRandomCard()).isInstanceOf(Card.class);
     }
     
@@ -31,19 +34,20 @@ public class RefereeTest {
 
     @Test
     void give_one_card_to_player() {
-        Referee referee = new Referee();
-        Player player = new Player();
-
         referee.giveOneCardToPlayer(player);
         Assertions.assertThat(player.getCardCount()).isEqualTo(1);
     }
 
     @Test
     void give_two_cards_to_player() {
-        Referee referee = new Referee();
-        Player player = new Player();
-
         referee.giveTwoCardsToPlayer(player);
         Assertions.assertThat(player.getCardCount()).isEqualTo(2);
+    }
+
+    @Test
+    void give_bettingmoney_player_to_dealer() {
+        referee.giveMoneyPlayerToDealer(player, dealer);
+        Assertions.assertThat(player.getSaveMoney()).isEqualTo(new Money(-10000));
+        Assertions.assertThat(dealer.getSaveMoney()).isEqualTo(new Money(10000));
     }
 }
