@@ -9,13 +9,10 @@ public abstract class AbstractPlayer {
         this.saveMoney = saveMoney;
     }
 
-    public void receiveCard(Card card) {
-        cards.add(card);
-    }
-
-    public void receiveTwoCards(Card card1, Card card2) {
-        receiveCard(card1);
-        receiveCard(card2);
+    public void receiveCard(Card... receiveCards) {
+        for (Card card : receiveCards) {
+            cards.add(card);
+        }
     }
 
     public boolean hasThatCard(Card card) {
@@ -32,5 +29,9 @@ public abstract class AbstractPlayer {
 
     public int getCardsSum() {
         return cards.getSum();
+    }
+
+    public int getCardCount() {
+        return cards.getCardCount();
     }
 }

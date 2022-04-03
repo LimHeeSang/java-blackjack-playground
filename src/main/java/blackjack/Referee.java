@@ -1,9 +1,6 @@
 package blackjack;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class Referee {
     public static final int COUNT_OF_CARD_SHAPE = 4;
@@ -55,5 +52,17 @@ public class Referee {
         int cardIndex = indexRandomNumbers.remove(pickRandomIndex);
 
         return cardDeck.getCardOfIndex(cardIndex);
+    }
+
+    public void giveOneCardToPlayer(Player... players) {
+        for (Player player : players) {
+            player.receiveCard(getRandomCard());
+        }
+    }
+
+    public void giveTwoCardsToPlayer(Player... players) {
+        for (Player player : players) {
+            player.receiveCard(getRandomCard(), getRandomCard());
+        }
     }
 }
