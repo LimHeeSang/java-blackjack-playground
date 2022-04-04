@@ -26,7 +26,7 @@ public class CardsTest {
                 new Card("Diamond", 10));
         Cards cards = new Cards(cardList);
 
-        Assertions.assertThat(cards.isOverThaTNumber(19)).isEqualTo(false);
-        Assertions.assertThat(cards.isOverThaTNumber(18)).isEqualTo(true);
+        Assertions.assertThat(cards.isOverThanNumber(19)).isEqualTo(false);
+        Assertions.assertThat(cards.isOverThanNumber(18)).isEqualTo(true);
     }
 }

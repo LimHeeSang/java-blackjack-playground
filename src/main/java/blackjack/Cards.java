@@ -2,6 +2,7 @@ package blackjack;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Cards {
     public static final int BLACKJACK_GOAL_NUMBER = 21;
@@ -29,7 +30,7 @@ public class Cards {
                 .reduce(0, Integer::sum);
     }
 
-    public boolean isOverThaTNumber(int number) {
+    public boolean isOverThanNumber(int number) {
         return getSum() > number;
     }
 
@@ -43,5 +44,15 @@ public class Cards {
 
     public int getCardCount() {
         return cards.size();
+    }
+
+    public boolean isUnderThanNumber(int number) {
+        return getSum() < number;
+    }
+
+    public List<String> getCardNames() {
+        return cards.stream()
+                .map(Card::getCardInfo)
+                .collect(Collectors.toList());
     }
 }

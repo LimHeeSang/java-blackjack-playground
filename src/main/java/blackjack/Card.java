@@ -25,6 +25,10 @@ public class Card {
         return cardNumber.getNumber();
     }
 
+    public String getCardInfo() {
+        return cardNumber.getNumber() + cardShape.getKoreanName();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

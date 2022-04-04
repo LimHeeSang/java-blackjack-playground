@@ -3,7 +3,7 @@ package blackjack;
 public class Dealer extends AbstractPlayer {
 
     public Dealer() {
-        super(new Money(0));
+        super(Player.DEFAULT_NAME, new Money(0));
     }
 
     public Money minusByBettingMoney(Money bettingMoney) {
