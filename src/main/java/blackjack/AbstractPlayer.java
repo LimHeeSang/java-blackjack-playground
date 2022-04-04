@@ -66,7 +66,7 @@ public abstract class AbstractPlayer {
         return sb.substring(0, sb.length() - 2);
     }
 
-    private String getName() {
+    public String getName() {
         return name;
     }
 
@@ -82,5 +82,9 @@ public abstract class AbstractPlayer {
                 .append(INFO_CARD_SYMBOL)
                 .append(mapCardNamesToString(cardNames))
                 .toString();
+    }
+
+    public boolean isOverCardsSum(AbstractPlayer player) {
+        return getCardsSum() > player.getCardsSum();
     }
 }

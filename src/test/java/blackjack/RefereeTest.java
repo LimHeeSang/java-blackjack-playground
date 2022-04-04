@@ -64,4 +64,17 @@ public class RefereeTest {
         Assertions.assertThat(dealer.getSaveMoney()).isEqualTo(new Money(-15000));
         Assertions.assertThat(player.getSaveMoney()).isEqualTo(new Money(15000));
     }
+
+    @Test
+    void player_is_winner() {
+        dealer.receiveCard(new Card("Spade", 10));
+        dealer.receiveCard(new Card("Diamond", 6));
+        dealer.receiveCard(new Card("Heart", 3));
+
+        player.receiveCard(new Card("Spade", 5));
+        player.receiveCard(new Card("Diamond", 6));
+        player.receiveCard(new Card("Heart", 9));
+
+        Assertions.assertThat(referee.isPlayerWinner(dealer, player)).isEqualTo(PlayResult.WIN);
+    }
 }
