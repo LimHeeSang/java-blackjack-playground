@@ -75,4 +75,9 @@ public class Referee {
         dealer.minusByBettingMoney(player.getBettingMoney());
         player.plusBettingMoney();
     }
+
+    public void giveMoneyDealerToPlayer(Player player, Dealer dealer, double multiple) {
+        dealer.minusByBettingMoney(player.getBettingMoney(), multiple);
+        player.plusBettingMoney(multiple);
+    }
 }
