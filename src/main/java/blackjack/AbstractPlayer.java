@@ -51,12 +51,8 @@ public abstract class AbstractPlayer {
     }
 
     public String getCardsAndSumInfo() {
-        List<String> cardNames = cards.getCardNames();
         StringBuilder sb = new StringBuilder();
-
-        return sb.append(getName())
-                .append(INFO_CARD_SYMBOL)
-                .append(mapCardNamesToString(cardNames))
+        return sb.append(getCardsInfo())
                 .append(INFO_RESULT_SYMBOL)
                 .append(getCardsSum())
                 .toString();
@@ -76,5 +72,15 @@ public abstract class AbstractPlayer {
 
     public String getSaveMoneyInfo() {
         return getName() + ": " + saveMoney.getSaveMoneyInfo();
+    }
+
+    public String getCardsInfo() {
+        List<String> cardNames = cards.getCardNames();
+
+        StringBuilder sb = new StringBuilder();
+        return sb.append(getName())
+                .append(INFO_CARD_SYMBOL)
+                .append(mapCardNamesToString(cardNames))
+                .toString();
     }
 }

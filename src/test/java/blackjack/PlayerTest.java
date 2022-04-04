@@ -68,4 +68,13 @@ public class PlayerTest {
     void get_save_money_info() {
         Assertions.assertThat(bettingPlayer.getSaveMoneyInfo()).isEqualTo("pobi: 0");
     }
+
+    @Test
+    void get_cards_info() {
+        bettingPlayer.receiveCard(new Card("Spade", 5));
+        bettingPlayer.receiveCard(new Card("Diamond", 6));
+        bettingPlayer.receiveCard(new Card("Heart", 7));
+
+        Assertions.assertThat(bettingPlayer.getCardsInfo()).isEqualTo("pobi카드 : 5스페이드, 6다이아몬드, 7하트");
+    }
 }
