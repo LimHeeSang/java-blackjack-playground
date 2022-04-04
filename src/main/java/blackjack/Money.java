@@ -21,6 +21,10 @@ public class Money {
         return new Money((int) (money * multiple));
     }
 
+    public String getSaveMoneyInfo() {
+        return String.valueOf(money);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -3,6 +3,9 @@ package blackjack;
 import java.util.List;
 
 public abstract class AbstractPlayer {
+    public static final String INFO_CARD_SYMBOL = "카드 : ";
+    public static final String INFO_RESULT_SYMBOL = " - 결과: ";
+    public static final String INFO_DELIMITER_SYMBOL = ", ";
     protected final Cards cards;
     protected Money saveMoney;
     protected String name;
@@ -51,9 +54,10 @@ public abstract class AbstractPlayer {
         List<String> cardNames = cards.getCardNames();
         StringBuilder sb = new StringBuilder();
 
-        return sb.append(getName()).append("카드 : ")
+        return sb.append(getName())
+                .append(INFO_CARD_SYMBOL)
                 .append(mapCardNamesToString(cardNames))
-                .append(" - 결과: ")
+                .append(INFO_RESULT_SYMBOL)
                 .append(getCardsSum())
                 .toString();
     }
@@ -61,12 +65,16 @@ public abstract class AbstractPlayer {
     private String mapCardNamesToString(List<String> cardNames) {
         StringBuilder sb = new StringBuilder();
         for (String cardName : cardNames) {
-            sb.append(cardName).append(", ");
+            sb.append(cardName).append(INFO_DELIMITER_SYMBOL);
         }
         return sb.substring(0, sb.length() - 2);
     }
 
     private String getName() {
         return name;
+    }
+
+    public String getSaveMoneyInfo() {
+        return getName() + ": " + saveMoney.getSaveMoneyInfo();
     }
 }
