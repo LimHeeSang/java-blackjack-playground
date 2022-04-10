@@ -66,7 +66,7 @@ public class RefereeTest {
     }
 
     @Test
-    void player_is_winner() {
+    void player_is_winner_one() {
         dealer.receiveCard(new Card("Spade", 10));
         dealer.receiveCard(new Card("Diamond", 6));
         dealer.receiveCard(new Card("Heart", 3));
@@ -76,5 +76,33 @@ public class RefereeTest {
         player.receiveCard(new Card("Heart", 9));
 
         Assertions.assertThat(referee.isPlayerWinner(dealer, player)).isEqualTo(PlayResult.WIN);
+    }
+
+    //todo - 각 상황에 맞는 테스트 코드
+
+    @Test
+    void player_is_winner_two() {
+        dealer.receiveCard(new Card("Spade", 10));
+        dealer.receiveCard(new Card("Diamond", 10));
+        dealer.receiveCard(new Card("Heart", 2));
+
+        player.receiveCard(new Card("Spade", 5));
+        player.receiveCard(new Card("Diamond", 6));
+        player.receiveCard(new Card("Heart", 9));
+
+        Assertions.assertThat(referee.isPlayerWinner(dealer, player)).isEqualTo(PlayResult.WIN);
+    }
+
+    @Test
+    void dealer_is_winner() {
+        dealer.receiveCard(new Card("Spade", 10));
+        dealer.receiveCard(new Card("Diamond", 6));
+        dealer.receiveCard(new Card("Heart", 3));
+
+        player.receiveCard(new Card("Spade", 5));
+        player.receiveCard(new Card("Diamond", 6));
+        player.receiveCard(new Card("Heart", 1));
+
+        Assertions.assertThat(referee.isPlayerWinner(dealer, player)).isEqualTo(PlayResult.LOSE);
     }
 }
