@@ -94,7 +94,7 @@ public class RefereeTest {
     }
 
     @Test
-    void dealer_is_winner() {
+    void dealer_is_winner_one() {
         dealer.receiveCard(new Card("Spade", 10));
         dealer.receiveCard(new Card("Diamond", 6));
         dealer.receiveCard(new Card("Heart", 3));
@@ -104,5 +104,31 @@ public class RefereeTest {
         player.receiveCard(new Card("Heart", 1));
 
         Assertions.assertThat(referee.isPlayerWinner(dealer, player)).isEqualTo(PlayResult.LOSE);
+    }
+
+    @Test
+    void dealer_is_winner_two() {
+        dealer.receiveCard(new Card("Spade", 10));
+        dealer.receiveCard(new Card("Diamond", 6));
+        dealer.receiveCard(new Card("Heart", 3));
+
+        player.receiveCard(new Card("Spade", 10));
+        player.receiveCard(new Card("Diamond", 10));
+        player.receiveCard(new Card("Heart", 2));
+
+        Assertions.assertThat(referee.isPlayerWinner(dealer, player)).isEqualTo(PlayResult.LOSE);
+    }
+
+    @Test
+    void player_is_draw() {
+        dealer.receiveCard(new Card("Spade", 10));
+        dealer.receiveCard(new Card("Diamond", 6));
+        dealer.receiveCard(new Card("Heart", 3));
+
+        player.receiveCard(new Card("Spade", 10));
+        player.receiveCard(new Card("Diamond", 6));
+        player.receiveCard(new Card("Heart", 3));
+
+        Assertions.assertThat(referee.isPlayerWinner(dealer, player)).isEqualTo(PlayResult.DRAW);
     }
 }
